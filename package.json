@@ -4,7 +4,9 @@
   "description": "app simple chat with authorization",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:client": "npm --cwd client dev",
+    "dev:server": "npm --cwd server start:dev",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/Olga2703/brave-developers-chat/issues"
   },
-  "homepage": "https://github.com/Olga2703/brave-developers-chat#readme"
+  "homepage": "https://github.com/Olga2703/brave-developers-chat#readme",
+  "devDependencies": {
+    "prisma": "^4.12.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.12.0",
+    "concurrently": "^8.0.1"
+  }
 }
